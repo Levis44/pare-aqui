@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/user-registration/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/user-registration/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/user-registration",
+  "projects": {
+    "user-registration": {
+      "type": "application",
+      "root": "apps/user-registration",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-registration/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-registration/tsconfig.app.json"
+      }
+    },
+    "parking-lot-registration": {
+      "type": "application",
+      "root": "apps/parking-lot-registration",
+      "entryFile": "main",
+      "sourceRoot": "apps/parking-lot-registration/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/parking-lot-registration/tsconfig.app.json"
+      }
+    }
+  }
+}
