@@ -1,8 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { UserEntity } from './entities/user.entity';
 
 @Injectable()
-export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+export class UserService {
+  users: Array<UserEntity> = [];
+
+  create(user: UserEntity): Array<UserEntity> {
+    this.users.push(user);
+
+    return this.users;
   }
 }
